@@ -1,8 +1,8 @@
-// @ts-ignore
 import workJSON from '@realsee/open-works/virtual/81RojBlJQdVTglNNMr/work.json';
 import { createFiveProvider } from '@realsee/five/react';
 import { ResponsiveFiveCanvas } from './components/ResponsiveFiveCanvas';
 import { ToggleFiveModeButton } from './components/ToggleFiveModeButton';
+import { parseWork } from '@realsee/five'
 
 // five初始化参数请参考
 // https://unpkg.com/@realsee/five@latest/docs/interfaces/five.FiveInitArgs.html
@@ -20,11 +20,13 @@ const FiveProvider = createFiveProvider({
 
 function App() {
   return (
-    <FiveProvider initialWork={workJSON}>
-      <ResponsiveFiveCanvas />
-      <ToggleFiveModeButton />
-    </FiveProvider>
-  );
+    workJSON && (
+      <FiveProvider initialWork={parseWork(workJSON)}>
+        <ResponsiveFiveCanvas />
+        <ToggleFiveModeButton />
+      </FiveProvider>
+    )
+  )
 }
 
 export default App;
