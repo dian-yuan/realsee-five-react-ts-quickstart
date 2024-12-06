@@ -1,12 +1,13 @@
+import { Tag } from '@realsee/dnalogel'
 import { ContentType } from '@realsee/dnalogel/dist'
 import { Mode } from '@realsee/five'
 import { Vector3 } from 'three'
-export const TagsList = [
+export const TagsList:Tag[] = [
   {
     dimensionType: '2D',
     pointType: 'PointTag',
     contentType: 'ImageText',
-    enable: true,
+    enabled: true,
     position: [-1.3311771624715265, 0, -0.8947385152744657],
     data: {
       text: '2D图文标签哈哈哈哈哈',
@@ -74,7 +75,7 @@ export const TagsList = [
     dimensionType: '3D',
     pointType: 'PlaneTag',
     contentType: 'MediaPlane',
-    enable: true,
+    enabled: true,
     position: [
       [-4.344637059045372, 0.8661640292431658, -2.339700937271118 + 0.01],
       [-1.4781933464383068, 0.8696103907729694, -2.339700937271118 + 0.01],
@@ -179,7 +180,7 @@ export const TagsList = [
     },
     style: {
       point: {
-        iconUrl: '//vr-static.realsee-cdn.cn/release/web/carTagDotContent.08ace25e.png',
+        url: '//vr-static.realsee-cdn.cn/release/web/carTagDotContent.08ace25e.png',
       },
     },
     id: 3,
@@ -201,7 +202,7 @@ export const TagsList = [
     dimensionType: '3D',
     pointType: 'PointTag',
     contentType: 'Text',
-    enable: true,
+    enabled: true,
     normal: [-2.6990631227056436, 0.018038999289274438, -0.3673991100072416],
     position: [0.927103332208612, 0.8445514464586326, -0.6591370084540737],
     data: {
@@ -226,7 +227,7 @@ export const TagsList = [
     dimensionType: '3D',
     pointType: 'PointTag',
     contentType: 'Text',
-    enable: true,
+    enabled: true,
     normal: [-2.6990631227056436, 0.018038999289274438, -0.3673991100072416],
     position: [0.927103332208612, 0.8545514464586326, -0.6591370084540737],
     data: {
@@ -251,12 +252,12 @@ export const TagsList = [
     dimensionType: '2D',
     pointType: 'PointTag',
     contentType: 'Audio',
-    // "position": [
-    //     0.17501044773948682,
-    //     1.1010380993204227,
-    //     -2.339700937271118
-    // ],
-    position: [-2.1892900647187052, 1.5567515982674699, 1.0212990045547485],
+    "position": [
+        0.17501044773948682,
+        1.1010380993204227,
+        -2.339700937271118
+    ],
+    // position: [-2.1892900647187052, 1.5567515982674699, 1.0212990045547485],
     data: {
       appearance: 'plane',
       audioUrl: '//vr-static.realsee-cdn.cn/release/web/test.145da774.m4a',
@@ -340,7 +341,7 @@ export const TagsList = [
 
           // url: 'https://test-vr-public.realsee-cdn.cn/test/uwork/vrcustomer/REALSEE_YUNYING/wmJkr0bkJ6FdngbtXx/2023-02-23_15-22-16.png',
           thumbnail:
-            'https://test-vr-public.realsee-cdn.cn/test/uwork/vrcustomer/REALSEE_YUNYING/wmJkr0bkJ6FdngbtXx/2023-02-23_15-22-16.png',
+            '//test-vr-public.realsee-cdn.cn/test/uwork/vrcustomer/REALSEE_YUNYING/wmJkr0bkJ6FdngbtXx/2023-02-23_15-22-16.png',
         },
       ],
     },
@@ -375,7 +376,7 @@ export const TagsList = [
       objectFit: 'contain',
       action: { type: 'iframe', url: '' },
       type: 'billboard1',
-      modelUrl: 'https://vrlab-public.ljcdn.com/common/file/web/1787333b-7ee1-44ce-ba48-ed7d43b8d406.gltf',
+      modelUrl: '//vrlab-public.ljcdn.com/common/file/web/1787333b-7ee1-44ce-ba48-ed7d43b8d406.gltf',
       defaultImageUrl: 'https://vrlab-public.ljcdn.com/common/file/web/262e33a5-a975-45ad-9821-1f658bd0e87a.png',
       previewUrl: 'https://vrlab-public.ljcdn.com/common/file/web/430987ac-4518-49ca-ae9a-3477526cd909.png',
       iconUrl: 'https://vrlab-public.ljcdn.com/common/file/web/ef5ee840-eb42-416c-9ce6-15e25a643e6e.png',
@@ -387,7 +388,7 @@ export const TagsList = [
         [-0.27, 1.6172, 0.028],
       ],
     },
-    style: { point: { iconType: 'circle' } },
+    // style: { point: { iconType: 'circle' } },
     config: { visibleConfig: { visiblePanoIndex: 'all' }, unfoldedConfig: { autoUnfold: { enable: false } } },
     matrix: [
       0.3012921352579293, 0, 0.9535318816021398, 0, 0, 1, 0, 0, -0.9535318816021398, 0, 0.3012921352579293, 0, 1.347059457861614,
@@ -439,7 +440,7 @@ export const TagsList = [
         [-0.27, 1.6172, 0.028],
       ],
     },
-    style: { point: { iconType: 'circle' } },
+    // style: { point: { iconType: 'circle' } },
     config: { visibleConfig: { visiblePanoIndex: 'all' }, unfoldedConfig: { autoUnfold: { enable: false } } },
     matrix: [
       -0.5596409874088015, 0, 0.828735159874432, 0, 0, 1, 0, 0, -0.828735159874432, 0, -0.5596409874088015, 0, 1.1166287008785034,

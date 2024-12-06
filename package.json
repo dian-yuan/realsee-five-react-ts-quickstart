@@ -18,9 +18,11 @@
     "@realsee/open-works": "latest",
     "@realsee/vapor": "latest",
     "@vitejs/plugin-react": "4.0.3",
+    "js-cookie": "3.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "three": "0.117.1"
+    "three": "0.117.1",
+    "vite-plugin-copy": "0.1.6"
   },
   "devDependencies": {
     "@babel/core": "^7.22.9",

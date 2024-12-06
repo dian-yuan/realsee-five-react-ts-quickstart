@@ -1,3 +1,11 @@
+/******* 
+ * @Author: yuanweihao
+ * @Date: 2024-12-05 16:53:31
+ * @LastEditTime: 2024-12-06 15:01:33
+ * @LastEditors: yuanweihao
+ * @FilePath: \realsee-template-react\src\plugins\PanoTagPluginUse.tsx
+ * @Description: 标签use
+ */
 import { useEffect, useState } from 'react'
 import { unsafe__useFiveInstance, useFiveEventCallback, useFiveState } from '@realsee/five/react'
 import { Five, Mode } from '@realsee/five'
@@ -26,12 +34,14 @@ const PanoTagPluginUse = () => {
       tagList: list,
       globalConfig: {
         renderType: 'Mesh',
-        simulate3D: true,
-        visibleConfig: {
-          entryFromModel: true,
-        },
+        // simulate3D: true,
+        // visibleConfig: {
+        //   entryFromModel: true,
+        // },
       },
     })
+    pluginInstance.enable()
+    pluginInstance.show()
   }
 
   const loadData1 = () => {
@@ -51,8 +61,11 @@ const PanoTagPluginUse = () => {
 
   useEffect(() => {
     loadData0()
-    return () => pluginInstance.dispose()
-  }, [five])
+    return () =>{
+      console.log('dispose');
+      pluginInstance.dispose()
+    } 
+  },[five])
 
   const handlerTagVisibleChange = async () => {
     if (visible) {
