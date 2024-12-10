@@ -4,11 +4,15 @@ import { createFiveProvider } from '@realsee/five/react';
 import { ResponsiveFiveCanvas } from './components/ResponsiveFiveCanvas';
 import { FivePluginInit, parseWork } from '@realsee/five'
 import { ToggleFiveModeButton } from './components/ToggleFiveModeButton';
-import { PanoFloorplanRadarPlugin, PanoTagPlugin,Sculpt } from '@realsee/dnalogel';
+import { PanoFloorplanRadarPlugin, PanoTagPlugin,Sculpt,ModelViewPlugin } from '@realsee/dnalogel';
 import { OrientationPlugin } from '@realsee/five/plugins'
 
+import "./vreo/defult.css";
+
+import MiniModelPanel from './plugins/MiniModelPanel';
 import PanoFloorplanRadarPanel from './plugins/PanoFloorplanRadarPanel'
 import PanoTagPluginUse from './plugins/PanoTagPluginUse';
+import { VreoPlayer } from './vreo/veroPlayer';
 import request from './utils/request'
 import { setToken } from './utils/auth';
 import Use from './plugins/Sculpt/Use'
@@ -18,33 +22,47 @@ import Use from './plugins/Sculpt/Use'
 // https://unpkg.com/@realsee/five@latest/docs/interfaces/five.FiveInitArgs.html
 
 // // 初始化鉴权
-function author(){
-   request('/dev-api/auth/access_token',{
-    method: 'POST',
-    isToken:false,
-    body: JSON.stringify({
-      app_key:'2708611',
-      app_secret:'833INYBW1AWY9YINNUYVVBHEJBSPTDII'
-    }),
-  }).then(res => {
-    setToken(res.data.access_token)
-    getBasicData(res.data.access_token)
-  })
-}
+// function author(){
+//    request('/dev-api/auth/access_token',{
+//     method: 'POST',
+//     isToken:false,
+//     body: JSON.stringify({
+//       app_key:'2708611',
+//       app_secret:'833INYBW1AWY9YINNUYVVBHEJBSPTDII'
+//     }),
+//   }).then(res => {
+//     setToken(res.data.access_token)
+//     getBasicData(res.data.access_token)
+//   })
+// }
 
-author()
+// author()
 
-function getBasicData(header){
-  return request('/dev-api/open/v3/vr/info',{
-    method: 'GET',
-    params: {
-      resource_code:'4oM61gXy4rFY0V6f3D',
-    },
-    headers:{"Authorization":header}
-  }).then(res=> {
-    console.log(res);
-  })
-}
+
+
+// function getBasicData(header){
+//   return request('/dev-api/open/v1/entity/floorplan',{
+//     method: 'GET',
+//     params: {
+//       vr_code:'4oM61gXy4rFY0V6f3D',
+//     },
+//     headers:{"Authorization":header}
+//   }).then(res=> {
+//     console.log(res);
+//   })
+// }
+
+// function getBasicData(header){
+//   return request('/dev-api/open/v3/vr/info',{
+//     method: 'GET',
+//     params: {
+//       resource_code:'4oM61gXy4rFY0V6f3D',
+//     },
+//     headers:{"Authorization":header}
+//   }).then(res=> {
+//     console.log(res);
+//   })
+// }
 
 const lineWidth = 1.5
 const lineOpacity = 0.8
@@ -63,6 +81,7 @@ const FiveProvider = createFiveProvider({
     // [PanoFloorplanRadarPlugin, 'panoFloorplanRadarPlugin'],
     [PanoTagPlugin, 'panoTagPlugin', { debug: false }] as FivePluginInit<typeof PanoTagPlugin> ,
     [OrientationPlugin, 'OrientationPlugin'],
+    [ModelViewPlugin,'modelViewPlugin'],
     [
       (five) =>
         new Sculpt(five, {
@@ -103,8 +122,10 @@ function App() {
         {/* 小地图 */}
         {/* <PanoFloorplanRadarPanel/> */}
         {/* 标签tag */}
-        <PanoTagPluginUse/>
-        <Use/>
+        {/* <VreoPlayer/> */}
+        {/* <PanoTagPluginUse/> */}
+        {/* <Use/> */}
+        <MiniModelPanel/>
       </FiveProvider>
     )
   )

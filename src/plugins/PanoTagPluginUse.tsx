@@ -7,20 +7,20 @@
  * @Description: 标签use
  */
 import { useEffect, useState } from 'react'
-import { unsafe__useFiveInstance, useFiveEventCallback, useFiveState } from '@realsee/five/react'
-import { Five, Mode } from '@realsee/five'
+import { unsafe__useFiveInstance } from '@realsee/five/react'
+// import { Five, Mode } from '@realsee/five'
 import { TagsList } from '../mocks/mock_a.ts'
 import TagsList6 from '../mocks/crash/maxTest.ts'
 import TagsList3 from '../mocks/mediaModel.ts'
-import TagsList2 from '../mocks/marketingData.ts'
-import TagsList4 from '../mocks/textTagData.ts'
-import TagsList5 from '../mocks/mjyygrw5.ts'
-import TagsList7 from '../mocks/qingxiesheying.ts'
-import TagsListCrash from '../mocks/crash/tag.json'
+// import TagsList2 from '../mocks/marketingData.ts'
+// import TagsList4 from '../mocks/textTagData.ts'
+// import TagsList5 from '../mocks/mjyygrw5.ts'
+// import TagsList7 from '../mocks/qingxiesheying.ts'
+// import TagsListCrash from '../mocks/crash/tag.json'
 import Stack from '@mui/material/Stack'
 import Button from '@mui/material/Button'
 import { PanoTagPluginExportInterface } from '@realsee/dnalogel/dist'
-import {Raycaster,Vector2} from 'three'
+// import {Raycaster,Vector2} from 'three'
 // import { FiveModeSwitcher } from '../components/FiveModeSwitcher.tsx'
 
 const PanoTagPluginUse = () => {
